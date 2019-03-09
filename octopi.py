@@ -91,13 +91,12 @@ while True:
         else:
             timeLeftString = minutesLeft + "m"
 
-    percentDone = int(jobData["progress"]["completion"])
-
     draw.text((x, top),    "State: " + str(jobData["state"]),  font=font, fill=255)
     draw.text((x, top+10), "Tool:  " + str(printerData["temperature"]['tool0']['actual']),  font=font, fill=255)
     draw.text((x, top+20), "Bed:   " + str(printerData["temperature"]['bed']['actual']),  font=font, fill=255)
 
     if jobData["state"] == "Printing":
+        percentDone = int(jobData["progress"]["completion"])
         draw.line((x, top+32, x+128, top+32), fill=255)
         draw.text((x, top+40),    "Left:  " + timeLeftString,  font=font, fill=255)
         draw.text((x+102, top+55),    str(percentDone) + "%",  font=font, fill=255)
