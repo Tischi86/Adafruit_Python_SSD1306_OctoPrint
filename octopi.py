@@ -71,9 +71,9 @@ while True:
         jobData = json.load(urllib2.urlopen('http://' + octoPrintHostname + '/api/job?apikey=' + apiKey))
         printerData = json.load(urllib2.urlopen('http://' + octoPrintHostname + '/api/printer?history=false&apikey=' + apiKey))
     except:
-	now = datetime.datetime.now()
+        now = datetime.now()
         draw.text((x+10, top+5), str(now.hour).zfill(2) + ":" + str(now.minute).zfill(2),  font=bigFont, fill=255)
-	draw.text((x+32, top+56), str(now.day).zfill(2) + "." + str(now.month).zfill(2) + "." + str(now.year),  font=font, fill=255)
+        draw.text((x+32, top+56), str(now.day).zfill(2) + "." + str(now.month).zfill(2) + "." + str(now.year),  font=font, fill=255)
         disp.image(image)
         disp.display()
         time.sleep(1)
