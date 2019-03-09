@@ -73,7 +73,7 @@ while True:
         draw.text((x, top), "Printer is offline",  font=font, fill=255)
         disp.image(image)
         disp.display()
-        time.sleep(.10)
+        time.sleep(1)
         continue
 
     if jobData["state"] == "Printing":
@@ -106,4 +106,4 @@ while True:
     # Display image.
     disp.image(image)
     disp.display()
-    time.sleep(.1)
+    time.sleep(1)
