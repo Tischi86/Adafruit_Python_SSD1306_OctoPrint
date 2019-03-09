@@ -61,6 +61,7 @@ x = 0
 
 # Load default font.
 font = ImageFont.load_default()
+bigFont = ImageFont.truetype('Minecraftia-Regular.ttf', 32)
 
 while True:
     # Draw a black filled box to clear the image.
@@ -70,7 +71,9 @@ while True:
         jobData = json.load(urllib2.urlopen('http://' + octoPrintHostname + '/api/job?apikey=' + apiKey))
         printerData = json.load(urllib2.urlopen('http://' + octoPrintHostname + '/api/printer?history=false&apikey=' + apiKey))
     except:
-        draw.text((x, top), "Printer is offline",  font=font, fill=255)
+	now = datetime.datetime.now()
+        draw.text((x+10, top+5), str(now.hour).zfill(2) + ":" + str(now.minute).zfill(2),  font=bigFont, fill=255)
+	draw.text((x+32, top+56), str(now.day).zfill(2) + "." + str(now.month).zfill(2) + "." + str(now.year),  font=font, fill=255)
         disp.image(image)
         disp.display()
         time.sleep(1)
