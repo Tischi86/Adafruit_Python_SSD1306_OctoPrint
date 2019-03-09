@@ -8,6 +8,8 @@ Edit the octopi.py file and change apikey and/or hostname of your device
 ```
 nano ./Adafruit_Python_SSD1306_OctoPrint/octopi.py
 ```
+Download the `Minecraftia-Regular.ttf` font [here](http://www.dafont.com/bitmap.php)
+
 To test it run it with
 ```
 sudo python ./Adafruit_Python_SSD1306_OctoPrint/octopi.py
